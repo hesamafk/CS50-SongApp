@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #c70039;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #c70039;
+}
+
+.nav-links a, .nav-links span {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.nav-links .btn {
+  padding: 7px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-red {
+  background-color: #c70039;
+  color: #fff;
+}
+
+.btn-gray {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.btn-red:hover {
+  background-color: #ff003f;
+  transform: scale(1.05);
+}
+
+.btn-gray:hover {
+  background-color: #575757;
+}
+
+main {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-card {
+  background: linear-gradient(145deg, #161616, #111);
+  border: 1px solid #2a2a2a;
+  box-shadow: 0px 4px 20px rgba(199, 0, 57, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  width: 85%;
+  max-width: 600px;
+  margin-bottom: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 25px rgba(255, 0, 80, 0.3);
+}
+
+.song-card h3 {
+  color: #ff1e56;
+  margin-bottom: 10px;
+}
+
+.song-card small {
+  color: #888;
+}
+
+form {
+  width: 85%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+}
+
+input {
+  background-color: #222;
+  color: white;
+}
+
+button {
+  background-color: #c70039;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff0048;
+  transform: scale(1.03);
+}
+
+.comments {
+  background-color: #191919;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comments p {
+  margin: 6px 0;
+  color: #ccc;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #222;
+}

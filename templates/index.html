@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2 style="color:#ff1e56; margin-bottom:30px;">🎶 لیست آهنگ‌ها</h2>
+
+{% if session.username %}
+<form action="/add_song" method="post" class="fade-in" style="margin-bottom:40px;">
+  <input name="title" placeholder="اسم آهنگ (مثلاً Shape of You)" required>
+  <input name="file_path" placeholder="لینک مستقیم MP3 (مثلاً https://cdn.pixabay.com/...)" required>
+  <button type="submit">افزودن آهنگ 🎵</button>
+</form>
+{% else %}
+  <p style="color:#aaa;">برای افزودن آهنگ یا نوشتن نظر، ابتدا وارد شوید.</p>
+{% endif %}
+
+<div id="songs">
+  {% for s in songs %}
+  <div class="song-card fade-in">
+    <h3>{{ s.title }}</h3>
+    <small>افزوده شده توسط {{ s.added_by }} | {{ s.added_at }}</small>
+
+    <audio controls style="width:100%; margin-top:10px;">
+      <source src="{{ s.file_path }}" type="audio/mpeg">
+      مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+    </audio>
+
+    {% if session.username %}
+    <form action="/add_comment" method="post" style="margin-top:15px;">
+      <input type="hidden" name="song_id" value="{{ s.id }}">
+      <input name="comment" placeholder="نظر شما..." required>
+      <button type="submit">ارسال نظر 💬</button>
+    </form>
+    {% endif %}
+
+    <div class="comments" style="margin-top:10px;">
+      {% if s.comments %}
+        {% for c in s.comments %}
+          <p><strong style="color:#ff3050;">{{ c.username }}</strong>: {{ c.comment }}</p>
+        {% endfor %}
+      {% else %}
+        <p style="color:#666;">هنوز نظری ثبت نشده.</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,19 +1,16 @@
 # CS50-SongApp
 
-Flask-based educational song application prototype.
+Flask/SQLite learning project.
 
-> **Status:** Portfolio / educational prototype. Source code is intended to be shared for review; deployment on GitHub Pages is optional.
+**Status:** Experimental / portfolio project. Not production-ready.
 
-## Technology
-Python, Flask, HTML, CSS, JavaScript, SQLite
-
-## Local development
-Create a virtual environment, install requirements.txt, configure .env based on .env.example, initialize the database from init_db.sql, then run Flask locally.
-
-## Source code status
-The full project source has **not yet been committed to this repository**. This README documents the project while source transfer is pending. Do not treat this repository as a complete copy until the files appear here.
+## Getting started
+Install dependencies from `requirements.txt`, initialize the SQLite schema, and run `python app.py`. Set `FLASK_SECRET_KEY` in your environment.
 
 ## Notes
-- Keep source files and relative asset paths together.
-- Do not commit passwords, API tokens, local databases containing personal data, or generated dependency folders.
-- Check functionality locally; a static GitHub preview is not a substitute for a backend.
+Do not use demo authentication, sample data, payment or admin UI as a production service without a security review.
+
+## Portfolio source
+This repository contains the project source for local use and review. GitHub Pages deployment is optional. Some features may require a local development server or external dependencies.
+
+**Note:** This is a learning / portfolio project, not a production-ready service.
