@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="error-panel">
+  <h1>خطای {{ code }}</h1>
+  <p role="alert">{{ message }}</p>
+  <a class="btn btn-red" href="/">بازگشت به خانه</a>
+  <a class="btn btn-gray" href="/login">صفحه ورود</a>
+</section>
+{% endblock %}

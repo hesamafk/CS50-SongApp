@@ -154,3 +154,20 @@ footer {
   color: #777;
   border-top: 1px solid #222;
 }
+
+* { box-sizing: border-box; }
+main { width: min(100%, 1000px); margin: auto; }
+.nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.logout-form { width: auto; margin: 0; }
+.logout-form button { margin: 0; width: auto; font: inherit; }
+#songs { width: 100%; display: grid; justify-items: center; }
+form { text-align: right; }
+label { display: block; margin-top: 16px; font-size: .9rem; color: #c7c0c4; }
+input[type="url"] { direction: ltr; text-align: left; }
+.comments { overflow-wrap: anywhere; }
+.song-card form { width: 100%; }
+.empty-state, .error-panel { text-align: center; padding: 30px; line-height: 1.9; }
+.error-panel a { display: inline-block; text-decoration: none; padding: 10px 18px; border-radius: 6px; }
+:focus-visible { outline: 2px solid #ff8da8; outline-offset: 3px; }
+@media(max-width: 600px) { .navbar { padding: 14px 18px; gap: 16px; flex-wrap: wrap; } main { padding: 28px 18px; } form, .song-card { width: 100%; } .welcome { font-size: .85rem; } }
+@media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

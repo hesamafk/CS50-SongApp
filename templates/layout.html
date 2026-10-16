@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
     <div class="nav-links">
       {% if session.username %}
         <span class="welcome">سلام، {{ session.username }}</span>
-        <a href="/logout" class="btn btn-red">خروج</a>
+        <form action="/logout" method="post" class="logout-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn btn-red" type="submit">خروج</button></form>
       {% else %}
         <a href="/login" class="btn btn-gray">ورود</a>
         <a href="/register" class="btn btn-red">ثبت‌نام</a>

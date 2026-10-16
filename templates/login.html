@@ -2,8 +2,9 @@
 {% block body %}
 <h3>ورود</h3>
 <form method="post">
-  <input name="username" placeholder="username" required><br><br>
-  <input name="password" placeholder="password" type="password" required><br><br>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label for="username">نام کاربری</label><input id="username" name="username" autocomplete="username" minlength="3" maxlength="80" required>
+  <label for="password">رمز عبور</label><input id="password" name="password" autocomplete="current-password" type="password" minlength="8" maxlength="256" required>
   <button type="submit">ورود</button>
 </form>
 {% endblock %}

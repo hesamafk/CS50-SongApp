@@ -5,8 +5,9 @@
 
 {% if session.username %}
 <form action="/add_song" method="post" class="fade-in" style="margin-bottom:40px;">
-  <input name="title" placeholder="اسم آهنگ (مثلاً Shape of You)" required>
-  <input name="file_path" placeholder="لینک مستقیم MP3 (مثلاً https://cdn.pixabay.com/...)" required>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label for="song-title">عنوان آهنگ</label><input id="song-title" maxlength="200" name="title" placeholder="اسم آهنگ (مثلاً Shape of You)" required>
+  <label for="song-url">لینک فایل صوتی</label><input type="url" id="song-url" maxlength="2048" name="file_path" placeholder="لینک مستقیم MP3 (مثلاً https://cdn.pixabay.com/...)" required>
   <button type="submit">افزودن آهنگ 🎵</button>
 </form>
 {% else %}
@@ -26,8 +27,9 @@
 
     {% if session.username %}
     <form action="/add_comment" method="post" style="margin-top:15px;">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
       <input type="hidden" name="song_id" value="{{ s.id }}">
-      <input name="comment" placeholder="نظر شما..." required>
+      <label for="comment-{{ s.id }}">نظر شما</label><input id="comment-{{ s.id }}" maxlength="5000" name="comment" placeholder="نظر شما..." required>
       <button type="submit">ارسال نظر 💬</button>
     </form>
     {% endif %}
@@ -42,6 +44,8 @@
       {% endif %}
     </div>
   </div>
+  {% else %}
+  <p class="empty-state">هنوز آهنگی اضافه نشده است. اولین آهنگ را به اشتراک بگذارید.</p>
   {% endfor %}
 </div>
 
